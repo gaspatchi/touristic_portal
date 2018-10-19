@@ -1,0 +1,193 @@
+.wrapper-post {
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    font-size: 14px;
+    color: white;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    background: #f7f7f7;
+    @include screen (lg) {
+        margin-bottom: 30px;
+    }
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    will-change: box-shadow;
+    transition: background 0.6s;
+    -webkit-transform: translateZ(0);
+}
+
+.wrapper-post {
+    .content-placeholder {
+        transition: all .4s ease-in-out;
+        .line {
+            transition: all .4s ease-in-out;
+            background: #f7f7f7;
+        }
+    }
+    .post-photo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: all .4s ease-in-out;
+        border-radius: 15px;
+        will-change: filter, transform;
+    }
+    .tags {
+        filter: opacity(0);
+        transition: all .4s ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $z-tags;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        font-size: 14px;
+        color: black;
+        font-weight: 600;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        .data {
+            border-radius: 30px;
+            padding: 5px 15px;
+            background: white;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            margin: 0 5px 5px 0;
+        }
+        .tag {
+            border-radius: 30px;
+            padding: 5px 15px;
+            background: white;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            margin: 0 5px 5px 0;
+        }
+    }
+    .post-info {
+        width: 100%;
+        background: transparent;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(100%);
+        transition: all .3s ease-in-out;
+        position: absolute;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        padding-bottom: 30px;
+        .description {
+            margin-top: -10px;
+            filter: opacity(0);
+            text-shadow: 0 !important;
+            will-change: filter;
+            padding: 0 20px 0 20px;
+            transition: filter .3s ease-in-out;
+        }
+        p {
+            transition: margin-top .3s ease-in-out;
+            opacity: 0.7;
+        }
+        will-change: bottom;
+    }
+    .btn-center {
+        display: flex;
+        justify-content: center;
+    }
+    a {
+        background: rgb(219, 219, 219);
+        color: rgb(126, 125, 125);
+        padding: 2px 10px;
+        display: inline-block;
+        border-radius: 100px;
+        margin-bottom: 0px;
+        transition: all .3s;
+        border: 1px solid transparent;
+        text-shadow: none !important;
+        &:hover {
+            background: rgb(209, 209, 209);
+            color: rgb(58, 58, 58);
+            border: 1px solid rgb(173, 173, 173);
+        }
+        &:active {
+            transform: scale(0.95);
+            background: rgb(182, 182, 182);
+        }
+    }
+    .heading {
+        top: 0;
+        transform: translateY(-100%);
+        position: absolute;
+        font-size: 20px;
+        display: flex;
+        align-items: flex-end;
+        will-change: transform, background;
+        transition: background .3s ease-in-out;
+        width: 100%;
+        padding: 20px;
+        h4 {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+    }
+    &.without-hover {
+        cursor: default;
+        .post-info, .tags {
+            display: none !important;
+            
+        }
+    }
+}
+
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
+.wrapper-post:hover {
+    .content-placeholder {
+        padding-top: 40px;
+        .line {
+            background: white;
+        }
+    }
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    will-change: box-shadow;
+    color: black;
+    .post-photo {
+        filter: brightness(0.5);
+        transform: scale(1.15);
+        will-change: filter, transform;
+    }
+    .heading {
+        background: white;
+    }
+    .post-info {
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+        will-change: bottom;
+        bottom: -1px;
+        bottom: 0;
+        transform: translateY(1px);
+        text-shadow: none;
+        background: white;
+    }
+    .description {
+        filter: opacity(1);
+    }
+    .tags {
+        filter: opacity(1);
+        transition-delay: 0.4s;
+    }
+    &.without-hover {
+        .post-photo {
+            filter: brightness(1);
+            transform: scale(1);
+        }
+    }
+}

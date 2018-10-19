@@ -1,0 +1,196 @@
+.slider.top-home {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    /* align items in Cross Axis */
+    align-content: stretch;
+    /* Extra space in Cross Axis */
+}
+
+.slider.top-home {
+    .cutblock {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        background: #0C6F55;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+        min-height: 350px;
+        @include screen(sm) {
+            min-height: 250px;
+            clip-path: polygon(0 0, 100% 0, 100% 20%, 0% 100%);
+        }
+        @include screen(md) {
+            min-height: 450px;
+        }
+        @include screen(md-up) {
+            min-height: 350px;
+        }
+        @include screen(lg-up) {
+            min-height: 550px;
+        }
+        @include screen(xl) {
+            min-height: 500px;
+        }
+    }
+    .swiper-container {
+        .img-raito {
+            width: 100%;
+            height: auto;
+            display: none;
+            &.h-55 {
+                @include screen(md) {
+                    display: block !important;
+                }
+                @include screen(xl) {
+                    display: block !important;
+                }
+            }
+            &.h-50 {
+                @include screen(md-up) {
+                    display: block !important;
+                }
+                @include screen(lg-up) {
+                    display: block !important;
+                }
+            }
+        }
+        .swiper-wrapper {
+            padding: 40px 0 40px 0;
+            @include screen(sm) {
+                padding: 10px 0 20px 0;
+            }
+            @include screen(xl) {
+                padding: 10px 0 30px 0;
+            }
+        }
+        width: 100%;
+        .swiper-slide {
+            .container-loading .line {
+                background: #f2f2f2;
+            }
+            background-color: #f2f2f2; // padding-top: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            color: white;
+            transform: scale(0.9);
+            transition: 0.3s;
+            position: relative;
+            a {
+                display: inline-block;
+                background: white;
+                color: black;
+                padding: 10px 20px;
+                font-weight: 700;
+                border-radius: 10px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+                margin-top: auto;
+                position: absolute;
+                bottom: 50px;
+                left: 40px;
+                transition: 0.1s all;
+                &:hover {
+                    transform: scale(1.03);
+                }
+                &:active {
+                    transform: scale(.98);
+                }
+                @include screen(lg-up) {
+                    bottom: 30px;
+                    left: 40px;
+                }
+                @include screen(md-up) {
+                    bottom: 30px;
+                    left: 35px;
+                }
+                @include screen(md) {
+                    font-size: 14px;
+                    padding: 10px 20px;
+                    bottom: 30px;
+                    left: 25px;
+                }
+                @include screen(sm) {
+                    bottom: 15px;
+                    left: 15px;
+                }
+            }
+        }
+        .swiper-slide {
+            @include screen(sm) {
+                height: 450px;
+                max-width: 320px;
+            } // @include screen(md) {
+            //     padding-top: 55%
+            // }
+            // @include screen(md-up) {
+            //     padding-top: 50%
+            // }
+            // @include screen(lg-up) {
+            //     padding-top: 50%
+            // }
+            // @include screen(xl) {
+            //     padding-top: 35%
+            // }
+        }
+        .swiper-slide-active {
+            transform: scale(1) !important;
+            cursor: default !important;
+        }
+        .swiper-slide {
+            &:hover {
+                cursor: pointer;
+                transform: scale(0.93);
+            }
+        }
+        .slide-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 50px 40px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            min-width: 80%;
+            width: 50%;
+            @include screen(sm) {
+                padding: 25px 20px !important;
+            }
+            @include screen(md) {
+                padding: 30px 25px;
+            }
+            @include screen(md-up) {
+                padding: 35px 30px;
+            }
+            @include screen(lg-up) {
+                padding: 40px 30px;
+            }
+            h2 {
+                font-weight: 700;
+                margin-bottom: 10px;
+                @include screen(sm) {
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+                @include screen(md) {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+            }
+            p {
+                width: 60%;
+                font-size: 18px;
+                width: 60%;
+                line-height: 1.2em;
+                @include screen(lg) {
+                    font-size: 16px;
+                    width: auto !important;
+                }
+                
+            }
+        }
+    }
+}

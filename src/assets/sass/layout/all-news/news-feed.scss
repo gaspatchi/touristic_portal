@@ -1,0 +1,310 @@
+.news-feed {
+    position: relative;
+    .cutblock {
+        position: absolute;
+        width: 100%;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+        padding-top: 10%;
+        top: -1px;
+        background: #0C6F55;
+        @include screen (sm) {
+            padding-top: 20%;
+        }
+    }
+}
+
+.news-feed {
+    .lg-down-reversive {
+        @include screen (xl-down) {
+            align-items: center;
+            .col-xl-9{
+                order: 1;
+            }
+            .col-xl-3{
+                order: 0;
+            }
+        }
+    }
+    .feed {
+        .col-12 {
+            padding-bottom: 30px;
+            @include screen(lg) {
+                padding-bottom: 0px;
+            }
+        }
+    }
+    .news-filter {
+        z-index: $z-news-filter;
+        position: sticky;
+        top: 15px;
+        background: white;
+        border-radius: 15px 15px 15px 0px;
+        padding: 35px 20px;
+        filter: drop-shadow(0 1.5px 3px rgba(0, 0, 0, 0.1));
+        &::before {
+            @include screen (xl) {
+                content: "";
+                width: 100%;
+                clip-path: polygon(calc(100% - 15px) 0, 15px 100%, 0 100%, 0 0);
+                padding-top: 10%;
+                background: inherit;
+                border-radius: 0px 15px 15px 15px;
+                top: 100%;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+    .news-filter {
+        .filter-message{
+            max-height: 0px;
+            transition: 0.5s all ease-in-out;
+            opacity: 0;
+            overflow: hidden;
+            font-weight: 600;
+            font-size: 14px;
+            color: rgba(0, 0, 0, .7);
+        }
+        h5 {
+            text-align: center;
+        }
+        .filter-category {
+            padding-top: 10px;
+            text-align: center;
+            h6 {
+                font-weight: 700;
+                font-size: 14px;
+            }
+        }
+        .select-container {
+            background: #f5f5f5;
+            border: 1px solid #e8e8e8;
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 8px 0 0 8px;
+        }
+        .f-value,
+        .inactive-search-button {
+            user-select: none;
+            border-radius: 15px;
+            margin: 0 8px 8px 0;
+            padding: 3px 13px;
+            background: #dcdcdc;
+            font-size: 15px;
+            cursor: pointer;
+            flex: 1;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+            &:hover {
+                background: #cccccc;
+            }
+            &:active {
+                background: #c5c5c5;
+                transform: scale(.99);
+            }
+        }
+        .f-value.active {
+            background: $yellow-color;
+        }
+        .btn-close {
+            height: 0;
+            overflow: hidden;
+        }
+        .search-container {
+            background: #f5f5f5;
+            border: 1px solid #e8e8e8;
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: nowrap;
+            padding: 8px;
+            align-items: stretch;
+            .news-search {
+                background: #fdfdfd;
+                border: 1px solid #e8e8e8;
+                border-radius: 13px;
+                outline: none;
+                width: 100%;
+                padding: 6px 15px;
+                appearance: none;
+                &::placeholder {
+                    text-align: center;
+                    transition: 0.2s;                    
+                }
+                &:focus {
+                    &::placeholder {
+                        text-align: left;
+                        color: transparent;
+                    }
+                }
+            }
+            .inactive-search-button {
+                flex-shrink: 0;
+                border-radius: 0 13px 13px 0;
+                margin-bottom: 0;
+                margin-right: 0;
+                vertical-align: auto;
+                line-height: 31px;
+                height: 38px;
+                display: none;
+                &:active {
+                    background: $yellow-color;
+                }
+            }
+        }
+        .search-container.active {
+            .news-search {
+                background: white;
+                border-right: 0;
+                border-radius: 13px 0 0 13px;
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+            .inactive-search-button {
+                display: block;
+            }
+        }
+    }
+    .news-filter.active-search {
+        .news-search {
+            background: white;
+            border-right: 0;
+            border-radius: 13px 0 0 13px;
+            &::placeholder {
+                color: transparent;
+            }
+        }
+        .inactive-search-button {
+            display: block;
+        }
+        .filter-message.active{
+            max-height: 200px;
+            opacity: 1;
+            padding: 10px 0;
+        }
+        .categories{
+            opacity: 0;
+            max-height: 0;
+        }
+    }
+    .news-filter {
+        @include screen(xl-down) {
+            hyphens: none !important;
+            padding: 15px;
+            transition: 1s all ease-in-out;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            max-height: 47px;
+            transition: all 0.6s ease-in-out;
+            overflow: hidden;
+            will-change: max-height;
+            h5 {
+                font-size: 16px;
+                transition: 0.7s all ease-in-out;
+                transform: translate3d(0, 0, 0);
+            }
+            .btn-close {
+                text-align: center;
+                color: rgb(219, 21, 21);
+                font-weight: 500;
+                margin-top: 15px;
+                font-size: 14px;
+                overflow: hidden;
+                height: 0;
+                transition: 0.2s all ease-in-out;
+                cursor: pointer;
+            }
+        }
+    }
+    .news-filter.xl-down-opend {
+        @include screen(xl-down) {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            cursor: default;
+            padding: 35px 20px 20px 20px;
+            max-height: 1000px;
+            h5 {
+                text-align: center;
+                width: 100%;
+                transform: scale(1.3);
+            }
+            .btn-close {
+                height: 1.4em;
+            }
+        }
+    }
+    .categories {
+        max-height: 500px;
+        transition: 0.5s all ease-in-out;
+        opacity: 1;
+        overflow: hidden;
+    }
+}
+
+.news-preloader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0 30px 15px;
+}
+.news-loaded{
+    h6{
+        text-align: center;
+        font-weight: 600;
+        opacity: 0.6;
+    }
+}
+
+.rounded-preloader {
+    opacity: 0.75;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: clockwise 500ms linear infinite;
+    animation: clockwise 500ms linear infinite;
+    .pswp1 {
+        position: relative;
+        width: 15px;
+        height: 30px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .pswp2 {
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        border: 2px solid $green-color;
+        border-radius: 50%;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: none;
+        margin: 0;
+        animation: donut-rotate 1000ms cubic-bezier(.4, 0, .22, 1) infinite;
+    }
+    @keyframes clockwise {
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+    @keyframes donut-rotate {
+        0% {
+            transform: rotate(0)
+        }
+        50% {
+            transform: rotate(-140deg)
+        }
+        100% {
+            transform: rotate(0)
+        }
+    }
+}

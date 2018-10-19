@@ -1,0 +1,35 @@
+{
+	"name": "Туристический портал Георгиевского городского округа",
+	"short_name": "Туристический портал",
+	"lang": "ru",
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#00694d",
+	"icons": [
+		{
+			"src": "http://city.georgievsk.ru/static/favicon-32x32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "http://city.georgievsk.ru/static/favicon-96x96.png",
+			"sizes": "96x96",
+			"type": "image/png"
+		},
+		{
+			"src": "http://city.georgievsk.ru/static/apple-touch-icon-152x152.png",
+			"sizes": "152x152",
+			"type": "image/png"
+		},
+		{
+			"src": "http://city.georgievsk.ru/static/apple-touch-icon-180x180.png",
+			"sizes": "180x180",
+			"type": "image/png"
+		},
+		{
+			"src": "http://city.georgievsk.ru/static/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	]
+}

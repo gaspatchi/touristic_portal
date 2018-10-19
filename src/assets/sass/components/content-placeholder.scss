@@ -1,0 +1,108 @@
+.container-loading {
+    overflow: hidden;
+    position: relative;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: placeholderAnimate;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.05) 2%, rgba(0, 0, 0, 0.1) 18%, rgba(0, 0, 0, 0.05) 33%);
+    background-size: 1300px;
+    margin-bottom: 16px;
+}
+
+@keyframes placeholderAnimate {
+    0% {
+        background-position: -650px 0;
+    }
+    100% {
+        background-position: 650px 0;
+    }
+}
+
+.content-placeholder {
+    width: 100%;
+    .line {
+        background: white;
+        height: 12px;
+        margin-top: 14px;
+        position: relative;
+    }
+    .line.width-20{&:before {width: 80% !important}}
+    .line.width-40{&:before {width: 60% !important}}
+    .line.width-60{&:before {width: 40% !important}}
+    .line.width-80{&:before {width: 20% !important}}
+    .line.width-100{&:before {width: 0 !important}}
+    .line {
+        width: 100%;
+        &:before {
+            content: "";
+            background: inherit;
+            height: 14px;
+            display: block;
+            position: absolute;
+            top: auto;
+            bottom: 100%;
+            right: 0;
+            width: 30%;
+        }
+    }
+    .line:nth-child(3n) {
+        &:before {
+            width: 20%;
+        }
+    }
+    .line:nth-child(2n) {
+        &:before {
+            width: 10%;
+        }
+    }
+}
+
+.content-placeholder {
+    .p-lines-18 {
+        .line {
+            height: 12px;
+            margin-top: 16px;
+        }
+        .line {
+            width: 100%;
+            &:before {
+                height: 16px;
+            }
+        }
+    }
+    .p-lines-22 {
+        .line {
+            height: 16px;
+            margin-top: 20px;
+        }
+        .line {
+            width: 100%;
+            &:before {
+                height: 20px;
+            }
+        }
+    }
+
+
+
+    .h-line-1 {.line {height: 10px; margin-top: 40px;
+               &:before {height: 40px;width: 0;}}
+    }
+    .h-line-2 {.line {height: 10px; margin-top: 30px;
+               &:before {height: 30px;width: 0;}}
+    }
+    .h-line-3 {.line {height: 10px; margin-top: 25px;
+               &:before {height: 25px;width: 0;}}
+    }
+    .h-line-4 {.line {height: 10px; margin-top: 18px;
+               &:before {height: 18px;width: 0;}}
+    }
+    .h-line-5 {.line {height: 10px; margin-top: 14px;
+               &:before {height: 14px;width: 0;}}
+    }
+    .h-line-6 {.line {height: 10px; margin-top: 12px;
+               &:before {height: 12px;width: 0;}}
+    }  
+}

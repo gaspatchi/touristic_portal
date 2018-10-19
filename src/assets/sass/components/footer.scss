@@ -1,0 +1,200 @@
+footer {
+    background: #181818;
+    color: white;
+    padding-bottom: 40px;
+    margin-top: auto;
+}
+
+footer {
+    .cutblock {
+        position: relative;
+        width: 100%;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        padding: 2%;
+        top: -1px;
+        margin-bottom: 20px;
+    }
+    .cutblock.yellow {
+        background: $yellow-color;
+    }
+    .cutblock.grey {
+        background: #eaeaea;
+    }
+    .cutblock.white {
+        background: white;
+    }
+}
+
+footer {
+    .site-heading {
+        display: flex;
+        align-items: flex-end;
+        @include screen(md){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        h1 {
+            margin-bottom: 0;
+            font-size: 30px;
+            @include screen(md){
+                margin-top: 10px;
+            }
+            @include screen (sm) {
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 15px;
+            margin-bottom: 0;
+            @include screen (sm) {
+                font-size: 14px;
+            }
+        }
+        margin-bottom: 30px;
+    }
+    a {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+    .city-logo{
+        width: 120px;
+        height: 70px;
+        margin-right: 10px;
+    }
+    .contact-name {
+        opacity: .2;
+        font-weight: 600;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    .contact-item {
+        margin-bottom: 15px;
+        h3 {
+            font-size: 22px;
+        }
+        h3 {
+            @include screen (sm) {
+                font-size: 20px;
+            }
+        }
+    }
+    .site-map {
+        @include screen (xl-down) {
+            order: -2;
+        }
+        a:before {
+            content: " ";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            @include bg-img('/assets/icons/link-icon.svg');
+            background-size: 70%;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            position: relative;
+            margin-bottom: -3px;
+        }
+        a {
+            opacity: .6;
+            @include screen (sm) {
+                font-size: 16px;
+            }
+        }
+        a:hover {
+            opacity: 1;
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+    .social-links {
+        @include screen (xl-down) {
+            margin-top: 15px;
+            order: -1;
+            margin-bottom: 20px;
+        }
+        a:before {
+            content: " ";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            position: relative;
+            margin-bottom: -3px;
+            margin-right: 5px;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        a {
+            opacity: .6;
+        }
+        a:hover {
+            opacity: 1;
+            &:before {
+                opacity: 1;
+            }
+        }
+        .vk-icon:before {
+            @include bg-img('/assets/icons/socail/vk.svg');
+        }
+        .youtube-icon:before {
+            @include bg-img('/assets/icons/socail/youtube.svg');
+        }
+        .ok-icon:before {
+            @include bg-img('/assets/icons/socail/ok.svg');
+        }
+        .twitter-icon:before {
+            @include bg-img('/assets/icons/socail/twitter.svg');
+        }
+        .instagram-icon:before {
+            @include bg-img('/assets/icons/socail/instagram.svg');
+        }
+    }
+    .gaspatchi-logo {
+        opacity: 0.4;
+        display: inline-block;
+        border-radius: 7px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        img {
+            z-index: 5;
+            width: 120px;
+            height: auto;
+            position: relative;
+           
+        }
+        .yellow-gradient{
+            z-index: 4;
+            width: 30px;
+            height: 30px;
+            display: block;
+            top: 7px;
+            opacity: 0;
+            left: 8px;
+            position: absolute;
+            background: #ffca00;
+            transition: 0.5s;
+            border-radius: 30px;
+            transform: scale(0);
+        }
+        transition: 0.2s;
+        &:hover{
+            opacity: 1;
+            transform: scale(1.05);
+            .yellow-gradient{
+                opacity: 1;
+                border-radius: 0;
+                transform: scale(1);
+            }            
+        }
+        
+    }
+}

@@ -1,0 +1,115 @@
+.dev-menu {
+    max-height: 80%;
+    overflow-y: auto;
+    *{
+        flex-shrink: 0;
+        user-select: none;
+    }
+    &.d-none{
+        display: flex !important;
+        left: -400px !important;
+    }
+    opacity: 1;
+    transition: 0.3s all ease-in-out;
+    position: fixed;
+    left: 50px;
+    top: 50px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    color: grey;
+    padding: 15px;
+    z-index: 99999999;
+    border-bottom: 3px solid rgb(218, 218, 218);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    border-radius: 2px;
+    @include screen(sm){
+        left: 10px;
+        top: 30px;
+    }
+    h2{
+        font-size: 15px;
+        font-weight: 600;
+        color: black;
+        margin-bottom: 5px;
+        padding-top: 10px;
+
+    }
+    h6 {
+        color: $green-color;
+        font-weight: 800;
+        padding: 5px 0 6px 0;
+        border-bottom: 2px $green-color solid;
+        display: inline-block;
+    }
+    .dev-close {
+        margin-left: 10px;
+        color: red !important;
+        background: rgb(245, 245, 245);
+        padding: 5px 10px;
+        font-weight: 800;
+        &:hover{
+            cursor: pointer;
+            background: rgb(214, 214, 214);
+        }
+    }
+    a:hover{
+        color: $yellow-color;
+        font-weight: 800;
+    }
+    a:before {
+        content: " ";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        @include bg-img('/assets/icons/link-icon.svg');
+        background-size: 70%;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+        position: relative;
+        margin-bottom: -3px;
+        filter: brightness(0);
+    }
+    button{
+        background: $green-color;
+        border-radius: 30px;
+        border: none;
+        color: white;
+        padding: 3px 10px;
+        outline: none;
+        margin-bottom: 5px;
+        &:active, &.active{
+            background: $yellow-color;
+            color: black;
+            font-weight: 600;
+            letter-spacing: -0.043em;
+        }
+    }
+    
+    .alert-colors{
+        span{
+            display: inline-block;
+            padding: 10px;
+            background: red;
+            margin-right: 5px;
+            border-radius: 100px;
+            border: 1px solid rgb(196, 0, 0);
+            cursor: pointer;
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+        span:nth-child(2){
+            background: #ffcf1b;
+            border: 1px solid #d6ac15;
+        }
+        span:nth-child(3){
+            background: #0d755a;
+            border: 1px solid #08523e;
+        }
+    }
+    
+}

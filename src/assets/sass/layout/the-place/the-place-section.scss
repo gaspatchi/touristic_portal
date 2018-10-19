@@ -1,0 +1,131 @@
+.the-place-section {
+    position: relative;
+    padding-top: 70px;
+    @include screen (md) {
+        padding-top: 60px;
+    }
+}
+
+.the-place-section {
+    .high-cutblock {
+        position: absolute;
+        width: 100%;
+        clip-path: polygon(100% 0, 100% 40%, 0 100%, 0 0);
+        padding-top: 15%;
+        top: 0;
+        background: #0C6F55;
+        @include screen (sm) {
+            padding-top: 70%;
+        }
+    }
+    .swiper-button-next,
+    .swiper-button-prev,
+    .exit-button {
+        margin-top: -17px;
+    }
+    .swiper-slide {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        @include bg-img('/assets/icons/swipr-arrow.svg');
+        width: 35px;
+        height: 35px;
+        background-size: 100%;
+    }
+    .swiper-button-next {
+        transform: rotate(180deg);
+    }
+    .col-12 {
+        @include screen (sm) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    .in-place-slider {
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 25px;
+        @include screen(md) {
+            border-radius: 7px;
+        }
+        @include screen(sm) {
+            margin-left: -15px;
+            width: calc(100% + 30px);
+            border-radius: 0;
+        }
+    }
+    .in-place-photo {
+        img{
+            width: 100%;
+            height: auto;
+            visibility: hidden;
+        }
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .the-place-info {
+        background: rgba(0, 0, 0, .1);
+        border-radius: 10px;
+        padding: 20px 30px;
+        display: flex;
+        min-height: 80px;
+    }
+    .the-place-info {
+        background: rgba(0, 0, 0, .1);
+        border-radius: 15px;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        @include screen(lg) {
+            flex-direction: column;
+            padding: 20px 30px 10px 30px;
+        }
+        @include screen(md) {
+            padding: 15px 20px 10px 20px;
+        }
+        .info-item {
+            padding-right: 30px;
+            display: flex;
+            align-items: center;
+            @include screen(lg) {
+                margin-bottom: 10px;
+            }
+        }
+        .text-info {
+            font-size: 15px;
+            @include screen(sm) {
+                font-size: 14px;
+            }
+            p {
+                margin-bottom: 0;
+                line-height: 1.2em;
+            }
+        }
+        .place-icon {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            flex-shrink: 1;
+            margin-right: 10px;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            @include screen(sm) {
+                width: 18px;
+                height: 18px;
+            }
+            &.adress-icon{
+                @include bg-img('/assets/icons/location.svg');
+            }
+            &.phone-icon{
+                @include bg-img('/assets/icons/phone-black.svg');
+            }
+            &.time-icon{
+                @include bg-img('/assets/icons/clock.svg');
+            }
+        }
+    }
+}

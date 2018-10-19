@@ -1,0 +1,115 @@
+.wp-content-section {
+    background: white;
+    min-height: 500px;
+    border-radius: 10px;
+    padding: 70px 60px;
+    letter-spacing: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    @include screen (lg) {
+        padding: 40px 30px;
+        margin-bottom: 30px;
+    }
+    @include screen (md) {
+        padding: 40px 15px;
+    }
+    @include screen (sm) {
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.wp-content {
+    .wp-heading {
+        h1 {
+            font-weight: 800;
+            margin-bottom: 0;
+            @include screen (lg) {
+                font-size: 26px;
+            }
+        }
+        .post-date,
+        .subheading {
+            font-weight: 800;
+            opacity: 0.4;
+        }
+        margin-bottom: 20px;
+    }
+    .wp-text-container {
+        font-size: 18px;
+        iframe {
+            max-width: 100%;
+            width: 100% !important;
+        }
+        img {
+            border-radius: 5px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            @include screen (sm) {
+                margin-left: -20px;
+                border-radius: 0;
+                max-width: none !important;
+                width: calc(100% + 35px);
+            }
+        }
+    }
+    table {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+        p {
+            margin-bottom: 0;
+        }
+        max-width: 100% !important;
+        width: auto;
+    }
+    table th:first-child tr {
+        background: red;
+    }
+    tr:nth-child(1) {
+        vertical-align: middle;
+        background: rgba(0, 0, 0, 0.01);
+        font-weight: 600;
+    }
+    table,
+    th,
+    tr {
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.9em;
+    }
+    th,
+    tr {
+        padding: 100px !important;
+    }
+    th {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    tr {
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    b,
+    strong {
+        >* {
+            font-weight: 700 !important;
+        }
+    }
+    blockquote {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.952);
+        margin: 30px 10px 30px 30px;
+        border-left: 5px solid #00553e;
+        padding-left: 30px;
+        padding: 15px 15px 1px 30px;
+        line-height: 1.4em;
+        position: relative;
+        background: #00694d;
+        @include screen (sm) {
+            margin-left: -20px;
+            border-radius: 0;
+            max-width: none !important;
+            margin: 30px 0 30px 10px;
+        }
+    }
+}

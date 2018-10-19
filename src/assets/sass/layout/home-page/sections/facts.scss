@@ -1,0 +1,103 @@
+// //fact-icon-setting
+// .the-fact{
+//     .group.icon       {@include bg-img('/assets/icons/facts/group.svg');        background-size: 65%;}
+//     .wallet.icon      {@include bg-img('/assets/icons/facts/wallet.svg');       background-size: 60%;}
+//     .ticket.icon      {@include bg-img('/assets/icons/facts/ticket.svg');       background-size: 70%;}
+//     .placeholder.icon {@include bg-img('/assets/icons/facts/placeholder.svg');  background-size: 60%;}
+//     .castle.icon      {@include bg-img('/assets/icons/facts/castle.svg');       background-size: 60%;}
+//     .graduate.icon    {@include bg-img('/assets/icons/facts/graduate.svg');     background-size: 60%;}
+// }
+.about-home-section {
+    background: white;
+    padding-bottom: 30px;
+    position: relative;
+    .row {
+        @include screen(lg) {
+            justify-content: center;
+        }
+    }
+}
+
+.border-fact {
+    padding: 2px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    transition: 0.2s ease-in-out;
+    transform: scale(0.98);
+    display: block;
+    &:hover {
+        background: linear-gradient(90deg, #14a880, #3562d4, #623ae1);
+        background-size: 400% 400%;
+        animation: border-animation 3s ease infinite;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+        transform: scale(1);
+    }
+    @keyframes border-animation {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+}
+.the-fact {
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    padding: 20px 10px;
+    @include screen(sm) {
+        padding: 5px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.the-fact {
+
+    .icon {
+        height: 95px;
+        width: 95px;
+        flex-shrink: 0;
+        filter: brightness(0);
+        transition: 0.3s ease-in-out;
+        background-size: 60%;
+        @include screen(sm) {
+            height: 120px;
+            width: 150px;
+        }
+    }
+    .about-fact {
+        width: 100%;
+    }
+    h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: black;
+        @include screen(sm) {
+            font-size: 18px;
+        }
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.3em;
+        color: #474747;
+    }
+}
+.fact-preloader{
+    .icon{
+        background: rgba(0, 0, 0, 0.05);
+        margin: 25px 15px 0 15px;
+        height: 65px;
+        width: 65px;
+        @include screen(sm) {
+            padding: 20px;
+            height: 100px;
+            width: 130px;
+        }
+    }
+}

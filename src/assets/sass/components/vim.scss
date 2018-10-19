@@ -1,0 +1,1041 @@
+.vim-windows-on {
+    .vim.icon {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+        background: rgba(0, 0, 0, 0.1);
+        transition: 0.2s;
+        transition-delay: 0.4s;
+        &::before {
+            transition: 0.2s;
+            transition-delay: 0.2s;
+            opacity: 1;
+            visibility: visible;
+            bottom: -30px;
+        }
+    }
+    .vim-settings {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s !important;
+    }
+    @include screen(md) {
+        overflow-y: hidden;
+    }
+    header {
+        z-index: $z-vimWindow;
+    }
+}
+
+.vim.icon {
+    transition: 0.2s;
+    transition-delay: 0s;
+    position: relative;
+    &::before {
+        content: "";
+        transition: 0.2s;
+        transition-delay: 0s;
+        position: absolute;
+        display: block;
+        right: calc(50% - 9px);
+        bottom: -40px;
+        transform: rotate(45deg);
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 4px 0 0 0;
+        opacity: 0;
+        visibility: hidden;
+        z-index: $z-vimWindow;
+    }
+}
+
+.vim-settings {
+    transition: 0.2s;
+    transition-delay: 0.3s !important;
+    user-select: none;
+    opacity: 0;
+    visibility: hidden;
+    background: white;
+    position: absolute;
+    top: 80px;
+    border-radius: 15px;
+    color: black;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    padding-bottom: 20px;
+    z-index: $z-vimWindow;
+    @include screen (md) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        overflow-y: auto;
+    }
+}
+
+.vim-settings {
+    .v-heading-1 {
+        font-size: 20px;
+        padding: 15px;
+        text-align: center;
+        line-height: 1.25em;
+        border-bottom: 1px solid rgb(226, 226, 226);
+        font-weight: 600;
+    }
+    .v-footer {
+        padding: 25px 20px 10px 20px;
+        border-top: 1px solid rgb(226, 226, 226);
+        display: flex;
+        justify-content: center;
+        .reset {
+            margin-right: 10px;
+        }
+        &>* {
+            color: black !important;
+            font-size: 16px !important;
+            background: #eeeeee;
+            background: linear-gradient(135deg, #e2e1e1 0%, #cfcece 100%);
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+        }
+    }
+    .vim-category {
+        padding: 15px 15px 20px 15px;
+        &:nth-child(3) {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+    .category-name {
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .switches {
+        margin-top: 10px;
+        display: flex;
+        .item {
+            flex: 1;
+            text-align: center;
+            background: #eeeeee;
+            background: linear-gradient(135deg, #e2e1e1 0%, #cfcece 100%);
+            margin: 0 5px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+            transition: 0.2s;
+            &:active {
+                background: #eeeeee;
+                background: linear-gradient(135deg, #e2e2e2 0%, #cacaca 100%);
+                transform: scale(0.95);
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            }
+            &.is-active,
+            &.turn-on {
+                background: #01468b;
+                background: linear-gradient(135deg, #005fbe 1%, #00478f 100%);
+                color: white;
+            }
+            &.fst-color {
+                background: white;
+                &.is-active {
+                    border: 2px solid#0063c7;
+                    color: #01468b;
+                }
+            }
+            &.scd-color {
+                background: black;
+                background: linear-gradient(135deg, #1b1b1b 1%, #000000 100%);
+                color: white;
+                &.is-active {
+                    border: 2px solid#0063c7;
+                    color: #01468b;
+                }
+            }
+        }
+        .t-small-size {
+            font-size: 16px
+        }
+        ;
+        .t-medium-size {
+            font-size: 24px
+        }
+        ;
+        .t-large-size {
+            font-size: 28px
+        }
+    }
+}
+
+.vim-t-s-small {
+    .vim-settings .switches .t-small-size {
+        background: #01468b !important;
+        background: linear-gradient(135deg, #005fbe 1%, #00478f 100%) !important;
+        color: white !important;
+    }
+    .comments .write-comment .commnents-heading h2 {
+        font-size: 24px;
+    }
+    .page-heading .wrapper p,
+    .slider.top-home .swiper-container .slide-content p,
+    .wrapper-post .heading h4,
+    .social-project h5,
+    .places-container .the-place .description h5,
+    .news-feed .news-filter h5,
+    .the-news-post .last-news-widget h4,
+    .the-project-head-photo .project-heading-text p,
+    .comments .no-comments h5,
+    .no-resultes h1 {
+        font-size: 22px !important;
+    }
+    .primary-menu .links-category .sub-links li a,
+    .home-news .btn,
+    .primary-menu .main-links li a,
+    .feedback .feedback-form h4,
+    .wp-content .wp-text-container,
+    .project-docs a,
+    .comments .the-comment .the-comment-content .commentor-name,
+    .comments .the-comment .the-comment-content .date,
+    .comments .write-comment input,
+    .comments .write-comment textarea,
+    .not-a-found-page .not-a-found-messege p,
+    .not-a-found-page .btn,
+    .feedback .feedback-form .send-button,
+    .feedback .feedback-form input,
+    .feedback .feedback-form textarea,
+    .about-city-head-photo .about-city-heading-text p {
+        font-size: 20px !important;
+    }
+    .activity-content p,
+    .social-project,
+    .all-projects .the-project .description p,
+    .feedback .feedback-form .send-button,
+    .comments .no-comments,
+    .forum-content-section .discussion-topic-list .item {
+        font-size: 19px !important;
+    }
+    .the-fact p,
+    .activity-content .more-info,
+    .places-container .places-heading h6,
+    .all-projects .the-project .get-more-button,
+    .feedback .contacts-data p,
+    .feedback .feedback-form .file-upload .hint-info,
+    .file-upload .context-message .btn,
+    .the-news-post .last-news-widget a h5,
+    .the-news-post .last-news-widget a p,
+    .comments .the-comment .the-comment-content .message,
+    .comments .the-comment .the-comment-content .answers .answer-button,
+    .comments .get-more-container .centred-btn,
+    .forum-content-section .the-discussion p,
+    .wp-content .wp-heading .post-date,
+    .wp-content .wp-heading .subheading,
+    .no-resultes p {
+        font-size: 18px !important;
+    }
+    .wrapper-post .description,
+    .wrapper-post .tags,
+    footer .contact-name,
+    footer a,
+    .places-filter .p-value,
+    .places-container .the-place .description .adress,
+    .places-container .the-place .description .category-tags div,
+    .news-feed .news-filter .filter-category h6,
+    .news-feed .news-filter .f-value,
+    .all-projects .the-project .project-features .the-future *,
+    .personal-data,
+    .the-place-section .the-place-info .text-info,
+    .comments .danger-messagse,
+    .comments .success-messagse {
+        font-size: 16px !important;
+    }
+    @include screen (md) {
+        .page-heading .wrapper h2 {
+            font-size: 27px !important;
+        }
+        .slider.top-home .swiper-container .slide-content p {
+            font-size: 18px !important;
+        }
+        .page-heading .wrapper p {
+            font-size: 19px !important;
+        }
+    }
+}
+
+.vim-t-s-medium {
+    .vim-settings .switches .t-medium-size {
+        background: #01468b !important;
+        background: linear-gradient(135deg, #005fbe 1%, #00478f 100%) !important;
+        color: white !important;
+    }
+    .page-heading .wrapper h2,
+    .all-projects .the-project h2 {
+        font-size: 34px !important;
+    }
+    .comments .write-comment .commnents-heading h2 {
+        font-size: 26px !important;
+    }
+    .page-heading .wrapper p,
+    .slider.top-home .swiper-container .slide-content p,
+    .the-fact h3,
+    .wrapper-post .heading h4,
+    .social-project h5,
+    .places-container .the-place .description h5,
+    .news-feed .news-filter h5,
+    .the-news-post .last-news-widget h4,
+    .the-project-head-photo .project-heading-text p,
+    .comments .no-comments h5,
+    .no-resultes h1 {
+        font-size: 24px !important;
+    }
+    .primary-menu .links-category .sub-links li a,
+    .home-news .btn,
+    .activity-content p,
+    .primary-menu .main-links li a,
+    .all-projects .the-project .description p,
+    .feedback .feedback-form h4,
+    .feedback .feedback-form .send-button,
+    .wp-content .wp-text-container,
+    .project-docs a,
+    .comments .the-comment .the-comment-content .commentor-name,
+    .comments .the-comment .the-comment-content .date,
+    .comments .write-comment input,
+    .comments .write-comment textarea,
+    .not-a-found-page .not-a-found-messege p,
+    .not-a-found-page .btn,
+    .feedback .feedback-form .send-button,
+    .feedback .feedback-form input,
+    .feedback .feedback-form textarea,
+    .about-city-head-photo .about-city-heading-text p {
+        font-size: 22px !important;
+    }
+    .the-fact p,
+    .activity-content .more-info,
+    .social-project p,
+    .places-container .places-heading h6,
+    .all-projects .the-project .get-more-button,
+    .feedback .contacts-data p,
+    .feedback .feedback-form .file-upload .hint-info,
+    .file-upload .context-message .btn,
+    .personal-data,
+    .the-news-post .last-news-widget a h5,
+    .the-news-post .last-news-widget a p,
+    .comments .no-comments,
+    .comments .the-comment .the-comment-content .message,
+    .comments .the-comment .the-comment-content .answers .answer-button,
+    .comments .get-more-container .centred-btn,
+    .comments .write-comment .btn,
+    .forum-content-section .the-discussion p,
+    .forum-content-section .discussion-topic-list .item,
+    .forum-content-section .comments .write-comment .btn,
+    .forum-content-section .comment-sended .btn,
+    .wp-content .wp-heading .post-date,
+    .wp-content .wp-heading .subheading,
+    .no-resultes p {
+        font-size: 20px !important;
+    }
+    .wrapper-post .description,
+    .wrapper-post .tags,
+    footer .contact-name,
+    footer,
+    .places-filter .p-value,
+    .places-container .the-place .description .adress,
+    .places-container .the-place .description .category-tags div,
+    .news-feed .news-filter .filter-category h6,
+    .news-feed .news-filter .f-value,
+    .all-projects .the-project .project-features .the-future *,
+    .the-place-section .the-place-info .text-info,
+    .comments .danger-messagse,
+    .comments .success-messagse {
+        font-size: 18px;
+    }
+    @include screen (xl-down) {
+        .slider.top-home .swiper-container .slide-content p {
+            width: auto !important;
+            overflow: hidden;
+        }
+    }
+    @include screen (md) {
+        .page-heading .wrapper h2 {
+            font-size: 29px !important;
+        }
+        .page-heading .wrapper p {
+            font-size: 21px;
+        }
+        .slider.top-home .swiper-container .slide-content p {
+            font-size: 18px !important;
+        }
+    }
+    .comments .the-comment .the-comment-content .message {
+        line-height: 1.2em;
+    }
+}
+
+.vim-t-s-large {
+    .vim-settings .switches .t-large-size {
+        background: #01468b !important;
+        background: linear-gradient(135deg, #005fbe 1%, #00478f 100%) !important;
+        color: white !important;
+    }
+    .page-heading .wrapper h2,
+    .all-projects .the-project h2 {
+        font-size: 36px !important;
+    }
+    .section-heading {
+        font-size: 34px !important;
+    }
+    .places-container .places-heading h3 {
+        font-size: 30px !important;
+    }
+    .page-heading .wrapper p,
+    .slider.top-home .swiper-container .slide-content p,
+    .the-fact h3,
+    .wrapper-post .heading h4,
+    .social-project h5,
+    .places-container .the-place .description h5,
+    .news-feed .news-filter h5,
+    .the-news-post .last-news-widget h4,
+    .the-project-head-photo .project-heading-text,
+    .the-project-head-photo .project-heading-text p,
+    .comments .no-comments h5,
+    .comments .write-comment .commnents-heading h2,
+    .no-resultes h1 {
+        font-size: 26px !important;
+    }
+    .primary-menu .links-category .sub-links li a,
+    .home-news .btn,
+    .primary-menu .main-links li a,
+    .all-projects .the-project .description p,
+    .feedback .feedback-form h4,
+    .feedback .feedback-form .send-buttond,
+    .wp-content .wp-text-container,
+    .project-docs a,
+    .comments .the-comment .the-comment-content .commentor-name,
+    .comments .the-comment .the-comment-content .date,
+    .comments .write-comment input,
+    .comments .write-comment textarea,
+    .forum-content-section .the-discussion p,
+    .not-a-found-page .not-a-found-messege p,
+    .not-a-found-page .btn,
+    .feedback .feedback-form .send-button,
+    .feedback .feedback-form input,
+    .feedback .feedback-form textarea {
+        font-size: 24px !important;
+    }
+    .activity-content p,
+    .about-city-head-photo .about-city-heading-text p {
+        font-size: 23px !important;
+    }
+    .the-fact p,
+    .activity-content .more-info,
+    .social-project p,
+    .places-container .places-heading h6,
+    .all-projects .the-project .get-more-button,
+    .feedback .contacts-data p,
+    .feedback .feedback-form .file-upload .hint-info,
+    .file-upload .context-message .btn,
+    .personal-data,
+    .the-news-post .last-news-widget h5,
+    .the-news-post .last-news-widget a p,
+    .comments .no-comments,
+    .comments .the-comment .the-comment-content .message,
+    .comments .the-comment .the-comment-content .answers .answer-button,
+    .comments .get-more-container .centred-btn,
+    .comments .write-comment .btn,
+    .forum-content-section .discussion-topic-list .item,
+    .forum-content-section .comments .write-comment .btn,
+    .forum-content-section .comment-sended .btn,
+    .no-resultes p {
+        font-size: 22px !important;
+    }
+    .the-place-section .the-place-info .text-info,
+    .comments .danger-messagse,
+    .comments .success-messagse,
+    .wp-content .wp-heading .post-date,
+    .wp-content .wp-heading .subheading {
+        font-size: 20px !important;
+    }
+    .wrapper-post .description,
+    .wrapper-post .tags,
+    footer a,
+    .places-filter .p-value,
+    .places-container .the-place .description .adress,
+    .news-feed .news-filter .filter-category h6,
+    .news-feed .news-filter .f-value,
+    .all-projects .the-project .project-features .the-future * {
+        font-size: 19px !important;
+    }
+    footer .contact-name,
+    .places-container .the-place .description .category-tags div {
+        font-size: 18px !important;
+    }
+    @include screen (xl-down) {
+        .slider.top-home .swiper-container .slide-content p {
+            width: auto !important;
+            overflow: hidden;
+        }
+    }
+    @include screen (md) {
+        .page-heading .wrapper h2 {
+            font-size: 31px !important;
+        }
+        .page-heading .wrapper p {
+            font-size: 22px;
+        }
+        .slider.top-home .swiper-container .slide-content p {
+            font-size: 19px !important;
+        }
+        .the-fact {
+            padding: 20px 12px;
+        }
+    }
+    .the-fact .icon {
+        display: none !important;
+    }
+    .comments .the-comment .the-comment-content .message {
+        line-height: 1.2em;
+    }
+}
+
+.vim-bg-white {
+    .vim-settings .switches .fst-color {
+        border: 2px solid#0063c7;
+        color: #01468b;
+    }
+    .header .line-menu,
+    .page-heading,
+    .primary-menu,
+    .primary-menu .content-placeholder .line,
+    .home-news .btn,
+    .social-activity .container-loading .line {
+        background: white;
+    }
+    .header {
+        background: white !important;
+    }
+    .about-city-head-photo .content-placeholder .line {
+        background: #dddddd;
+    }
+    .page-heading,
+    .slider.top-home .cutblock,
+    .home-news .cutblock,
+    .social-activity,
+    footer .cutblock.yellow,
+    .places-container .cutblock,
+    .news-feed .cutblock,
+    .all-projects .cutblock,
+    .feedback .cutblock,
+    .the-place-section .high-cutblock,
+    .the-news-post .high-cutblock,
+    .the-project-head-photo,
+    .forum .cutblock,
+    .not-a-found-page .high-cutblock {
+        background: rgb(250, 250, 250);
+    }
+    .swiper-container .swiper-slide,
+    .slider.top-home .swiper-container .swiper-slide .container-loading .line {
+        background-color: rgb(212, 212, 212) !important;
+    }
+    .header .line-menu,
+    footer .cutblock.white {
+        background-color: black;
+    }
+    .header .right-part li a,
+    .page-heading,
+    .primary-menu,
+    .primary-menu .links-category .main-link,
+    .primary-menu .links-category .sub-links li a,
+    .home-news .btn,
+    .primary-menu .main-links,
+    .places-filter .p-value.active,
+    .the-project-head-photo .row {
+        color: black !important;
+    }
+    .the-project-head-photo .row {
+        text-shadow: none;
+    }
+    .about-home-section {
+        filter: grayscale(1);
+    }
+    .home-news .btn .right-arrow.icon,
+    footer,
+    footer .cutblock.yellow,
+    footer .cutblock.grey {
+        filter: invert(1);
+    }
+    .social-activity .social-project {
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    }
+    footer a,
+    footer .contact-name {
+        opacity: 1 !important;
+    }
+    .all-projects .the-project .get-more-button {
+        border-color: #a5a5a5;
+        color: #a5a5a5;
+        &:hover {
+            border-color: #a5a5a5;
+            background: #a5a5a5;
+            color: black;
+        }
+        .right-arrow.icon {
+            filter: invert(1) !important;
+        }
+    }
+    .feedback .feedback-form .send-button,
+    .feedback .feedback-form .file-upload .upload-button {
+        background: #a5a5a5;
+        color: white;
+        &:hover {
+            background: #a5a5a5;
+        }
+    }
+    .project-photo-img {
+        opacity: 0.3;
+        filter: brightness(1);
+    }
+}
+
+.vim-bg-black {
+    .vim-settings .switches .scd-color {
+        border: 2px solid#0063c7;
+        color: white;
+    }
+    .vim-settings .switches .turn-on {
+        background: #01468b !important;
+        background: linear-gradient(135deg, #005fbe 1%, #00478f 100%) !important;
+        color: white !important;
+    }
+    .header,
+    .header .line-menu,
+    .page-heading,
+    .top-home.slider,
+    .primary-menu,
+    .primary-menu .content-placeholder .line,
+    .home-news .cutblock,
+    .social-activity,
+    footer .cutblock.yellow,
+    .places-container,
+    footer .cutblock.grey,
+    .news-feed,
+    .all-projects,
+    .feedback,
+    .the-place-section,
+    .the-news-post,
+    .the-project-content,
+    .the-project-content .wp-content-section,
+    .comments,
+    footer .cutblock.white,
+    .forum,
+    .not-a-found-page,
+    .about-city-content,
+    .about-city-content .content-placeholder .line,
+    .social-activity .container-loading .line,
+    body {
+        background: black;
+    }
+    .header,
+    .about-city-content .wp-content-section {
+        background-color: black !important;
+    }
+    .places-container .the-place .place-photo,
+    .places-filter .p-value,
+    .all-projects .the-project,
+    .all-projects .the-project .content-placeholder .line,
+    .wp-content-section,
+    .feedback .feedback-form .file-upload .context-message,
+    .the-news-post .last-news-widget h4,
+    .content-placeholder .line,
+    .project-docs,
+    .feautures-and-silder-wrapper .feauture-block,
+    .comments .get-more-container .centred-btn,
+    .comments .the-comment .avatar {
+        background-color: rgb(27, 27, 27);
+    }
+    .no-resultes {
+        background: rgb(27, 27, 27) !important;
+    }
+    .forum-content-section .discussion-topic-list .item.active:after {
+        filter: invert(1);
+    }
+    .feautures-and-silder-wrapper,
+    .forum-content-section,
+    .forum .comments .write-comment input,
+    .forum .comments .write-comment textarea,
+    .comments .write-comment .textarea-with-docs {
+        background: rgb(14, 14, 14) !important;
+    }
+    .swiper-container .swiper-slide,
+    .home-news .btn,
+    .social-project,
+    .primary-menu .main-links .is-activ,
+    .places-container .the-category-places,
+    .header .right-part li .is-active,
+    .the-place-section .the-place-info,
+    .the-news-post .last-news-widget,
+    .comments .write-comment input,
+    .comments .write-comment textarea,
+    .comments .write-comment .btn,
+    .slider.top-home .swiper-container .swiper-slide .container-loading .line {
+        background-color: rgb(36, 36, 36) !important;
+    }
+    .the-news-post .last-news-widget h4,
+    .project-docs {
+        border: none;
+    }
+    .forum-content-section .the-discussion,
+    .forum .comments,
+    .forum-content-section .discussion-topic-list .item.active,
+    .forum-content-section .discussion-topic-list .item:hover,
+    .forum .content-placeholder .line,
+    .forum-content-section .list-heading {
+        background: #141414 !important;
+    }
+    .project-docs h3 {
+        border-color: white;
+    }
+    .comments .the-comment,
+    .forum-content-section .discussion-topic-list .item {
+        border-color: #222222 !important;
+    }
+    .places-container .the-place .description .category-tags div,
+    .places-filter .p-value:hover,
+    .all-projects .the-project .project-features,
+    .feedback .feedback-form input,
+    .feedback .feedback-form textarea,
+    .wrapper-popup .container .scroll-doc,
+    .comments .no-comments {
+        background-color: rgb(36, 36, 36);
+    }
+    .forum .comments .no-comments,
+    .comments .danger-messagse.active,
+    .comments .success-messagse {
+        background: rgb(49, 49, 49) !important;
+    }
+    .forum .comments .write-comment .btn {
+        background: rgb(97, 97, 97);
+    }
+    .all-projects .the-project .project-features,
+    .feedback .feedback-form input,
+    .feedback .feedback-form textarea {
+        color: white !important;
+        &:active {
+            background-color: rgb(36, 36, 36);
+        }
+    }
+    .feedback .feedback-form input.danger,
+    .feedback .feedback-form textarea.danger {
+        background-color: rgb(44, 23, 23);
+        &::placeholder {
+            color: white;
+        }
+    }
+    .forum-content-section .discussion-topic-list .item {
+        color: #a5a5a5;
+    }
+    .page-heading,
+    .slider.top-home .cutblock,
+    .home-news,
+    .social-activity .more-info,
+    .primary-menu .main-links,
+    .vim-settings,
+    .places-container .cutblock,
+    .places-container .the-place,
+    .the-place .content-placeholder .line,
+    .news-feed .cutblock,
+    .all-projects .cutblock,
+    .feedback .cutblock,
+    .the-place-section .high-cutblock,
+    .the-news-post .high-cutblock,
+    .wrapper-popup .container,
+    .forum .cutblock,
+    .not-a-found-page .high-cutblock {
+        background: rgb(12, 12, 12);
+    }
+    .places-container .the-place {
+        border: none;
+    }
+    .header .line-menu,
+    .places-filter .p-value.active,
+    .places-filter .p-value.active:hover,
+    .fact-preloader .content-placeholder .line {
+        background-color: white !important;
+    }
+    .header .right-part li a,
+    .page-heading,
+    .home-news .section-heading,
+    .social-activity,
+    .vim-settings,
+    .places-container .the-category-places,
+    .news-loaded h6,
+    .all-projects .the-project,
+    .wp-content-section,
+    .the-news-post .last-news-widget,
+    .comments,
+    .comments .write-comment input,
+    .comments .write-comment textarea,
+    .forum-content-section .the-discussion,
+    .forum-content-section .discussion-topic-list .item.active,
+    .forum-content-section .discussion-topic-list .item:hover,
+    .no-resultes,
+    .forum-content-section .list-heading {
+        color: white;
+    }
+    .header .right-part li .is-active:hover {
+        color: white !important;
+    }
+    .view-mode .view-settings .settings-switches {
+        background: rgb(12, 12, 12);
+        color: white;
+        .item {
+            background: #3a3a3a;
+            background: linear-gradient(135deg, #3a3a3a 1%, #222222 100%);
+            >div {
+                filter: invert(1);
+                opacity: 1;
+            }
+        }
+        .item {
+            background: #3a3a3a;
+            background: linear-gradient(135deg, #3a3a3a 1%, #222222 100%);
+            &.is-active {
+                background: #01468b;
+                background: linear-gradient(135deg, #005fbe 1%, #00478f 100%);
+                color: white;
+            }
+        }
+        &:before {
+            background: rgb(12, 12, 12);
+        }
+    }
+    .vim-settings {
+        border: 1px solid white;
+        @include screen (md) {
+            border: 0;
+            .v-heading-1,
+            .v-footer {
+                border-color: rgb(43, 43, 43) !important;
+            }
+        }
+        .switches .item {
+            background: #3a3a3a;
+            background: linear-gradient(135deg, #3a3a3a 1%, #222222 100%);
+        }
+        .fst-color,
+        .v-footer>* {
+            background: #ffffff !important;
+            background: linear-gradient(135deg, #ffffff 0%, #f3f3f3 100%) !important;
+            color: black;
+        }
+        .scd-color {
+            background: black !important;
+            background: linear-gradient(135deg, #1b1b1b 1%, #000000 100%) !important;
+            color: white !important;
+        }
+    }
+    .about-home-section {
+        filter: invert(1) grayscale(1);
+    }
+    .wrapper-post,
+    .wrapper-post .post-photo,
+    .places-container .the-place .description .adress:before,
+    .news-feed .news-filter,
+    .news-feed .news-filter .f-value.active,
+    .the-place-section .the-place-info .place-icon,
+    .the-feauture,
+    .attach-files .attach-btn {
+        filter: invert(1);
+    }
+    .home-news .btn {
+        filter: grayscale(1);
+    }
+    .wrapper-post .heading h4,
+    .social-activity .more-info:hover,
+    .social-activity .more-info:active,
+    .places-container .the-place .description .category-tags div:first-child {
+        color: black;
+        text-shadow: 0 !important;
+    }
+    .social-activity .more-info:active,
+    .social-activity .more-info:hover,
+    .header .right-part li a:hover,
+    .places-filter .p-value.active {
+        color: black !important;
+    }
+    .news-feed .news-filter,
+    .news-feed .news-filter .search-container .news-search {
+        background: #e4e4e4 !important;
+    }
+    .all-projects .the-project .get-more-button {
+        border-color: #ffffff;
+        color: #ffffff;
+        &:hover {
+            border-color: #ffffff;
+            background: #ffffff;
+            color: black;
+        }
+        .right-arrow.icon {
+            filter: invert(1) !important;
+        }
+    }
+    .feedback .feedback-form .send-button,
+    .feedback .feedback-form .file-upload .upload-button,
+    .feedback .feedback-form .file-upload .context-message .btn {
+        background: #535353;
+        color: white;
+        &:hover {
+            background: #858585;
+        }
+    }
+    .the-project-head-photo .project-photo-img,
+    .about-city-head-photo .about-city-photo {
+        opacity: 0.5;
+        filter: brightness(0.5);
+    }
+    .feautures-and-silder-wrapper .slider.the-project .slider-blur-cover {
+        filter: brightness(0.5);
+    }
+    .wp-content blockquote {
+        border-left: 5px solid #1f1f1f;
+        background: #0e0e0e;
+    }
+    .feautures-and-silder-wrapper .feauture-block:after {
+        background: linear-gradient(0deg, #1b1b1b 0, hsla(0, 0%, 11%, 0.62));
+    }
+    .wp-content table {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+        background: #242424;
+    }
+    
+    .wrapper-post{
+        &.without-hover {
+            &:hover {
+                .post-photo {
+                    filter: brightness(1) invert(1);
+                }
+            }
+        }
+    }
+}
+
+.vim-img-hide {
+    .wp-content .wp-text-container img,
+    .comments .media-apps {
+        display: none;
+    }
+    .vim-settings .switches .turn-off {
+        background: #01468b !important;
+        background: linear-gradient(135deg, #005fbe 1%, #00478f 100%) !important;
+        color: white !important;
+    }
+    .vim-settings .switches .turn-on {
+        background: #eeeeee !important;
+        background: linear-gradient(135deg, #e2e1e1 0%, #cfcece 100%) !important;
+        color: black !important;
+    }
+    .slider.top-home .swiper-container .swiper-slide,
+    .wrapper-post .post-photo,
+    .social-activity .project-photo,
+    .all-projects .the-project .project-photo,
+    .the-place-section .in-place-photo,
+    .the-project-head-photo .project-photo-img,
+    .about-city-head-photo .about-city-photo,
+    .feautures-and-silder-wrapper .slider.the-project .swiper-slide,
+    .feautures-and-silder-wrapper .slider.the-project .slider-blur-cover .blur-img,
+    .feautures-and-silder-wrapper .the-project.slider .geo-slider,
+    .slider.top-home .swiper-container .swiper-slide .container-loading .line {
+        background-image: none !important;
+        background-color: rgb(27, 27, 27);
+    }
+    .place-photo {
+        background-image: none !important;
+        background-color: rgb(228, 228, 228);
+    }
+    .wrapper-post .content-placeholder .line {
+        background: #1b1b1b;
+    }
+    .wrapper-post:hover .content-placeholder .line {
+        background: white;
+    }
+    &.vim-bg-white {
+        .slider.top-home .swiper-container .swiper-slide,
+        .wrapper-post .heading h4 {
+            color: #000000 !important;
+            * {
+                text-shadow: none !important;
+            }
+        }
+        .about-city-head-photo .about-city-heading-text {
+            color: black;
+        }
+        .wrapper-post .post-photo,
+        .social-activity .project-photo,
+        .places-container .the-place .place-photo,
+        .all-projects .the-project .project-photo {
+            background-color: rgb(214, 214, 214);
+        }
+        .social-activity .project-photo,
+        .places-container .the-place .place-photo {
+            background-color: rgb(214, 214, 214) !important;
+        }
+        .wrapper-post .content-placeholder .line {
+            background: #d6d6d6;
+        }
+        .wrapper-post:hover .content-placeholder .line {
+            background: white;
+        }
+        .about-city-head-photo .about-city-photo {
+            background: rgb(221, 221, 221);
+            filter: none;
+        }
+    }
+    &.vim-bg-black {
+        .wrapper-post .heading h4 {
+            * {
+                text-shadow: none !important;
+            }
+        }
+        .vim-settings {
+            .turn-on {
+                background: #3a3a3a !important;
+                background: linear-gradient(135deg, #3a3a3a 1%, #222222 100%) !important;
+                color: white !important;
+            }
+        }
+        .wrapper-post:hover .heading h4 {
+            color: black!important;
+            * {
+                text-shadow: none !important;
+            }
+        }
+        .wrapper-post .content-placeholder .line {
+            background: #e4e4e4 !important;
+        }
+        .wrapper-post:hover .content-placeholder .line {
+            background: white !important;
+        }
+        .social-activity .project-photo,
+        .all-projects .the-project .project-photo {
+            background-image: none !important;
+            background-color: #242424;
+        }
+        .feautures-and-silder-wrapper .slider.the-project .slider-blur-cover .blur-img {
+            background: rgb(87, 87, 87);
+        }
+    }
+}
+
+.vim-t-s-small,
+.vim-t-s-medium,
+.vim-t-s-large,
+.vim-bg-white,
+.vim-bg-black,
+.vim-img-hide {
+    .vim.icon {
+        @include bg-img-important('/assets/icons/eye-active.svg');
+    }
+}

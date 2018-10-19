@@ -1,0 +1,335 @@
+.feedback {
+    position: relative;
+    .cutblock {
+        position: absolute;
+        width: 100%;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+        padding-top: 10%;
+        top: -1px;
+        background: #014b96;
+        @include screen (sm) {
+            padding-top: 20%;
+        }
+    }
+}
+.scroll-lock{
+    overflow: hidden;
+}
+.wrapper-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(25, 75, 122, 0.425);
+    width: 100%;
+    height: 100%;
+    z-index: $z-popup;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s opacity;
+    .container {
+        height: calc(100% - 140px);
+        background: white;
+        margin-top: 70px;
+        box-shadow: 0 5px 10px rgba(31, 31, 31, 0.2);
+        border-radius: 10px;
+        padding: 40px;
+        @include screen(xl-down) {
+            padding: 20px;
+            height: calc(100% - 80px);
+            margin-top: 40px;
+        }
+        @include screen(md) {
+            padding: 0 20px 20px 20px;
+            height: 100%;
+            margin-top: 0;
+            border-radius: 0;
+        }
+        .scroll-doc {
+            background: rgb(243, 243, 243);
+            border-radius: 5px;
+            padding: 70px 100px;
+            height: calc(100% - 50px);
+            overflow-y: auto;
+            @include screen(xl-down) {
+                padding: 20px 30px;
+            }
+            @include screen(md) {
+                height: calc(100% - 55px);
+                border-radius: 0;
+                padding: 50px 15px;
+            }
+        }
+        .btn {
+            border: 0;
+            outline: 0;
+            border-radius: 10px;
+            margin-top: 20px;
+            float: right;
+            @include screen(md) {
+                margin-right: 20px;
+            }
+        }
+    }
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.feedback {
+    h1 {
+        font-weight: 800;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .container {
+        @include screen(sm) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .contacts-data {
+        font-size: 16px;
+        p {
+            line-height: 1.2em;
+        }
+    }
+    .contacts {
+        @include screen(xl-down) {
+            opacity: 0.3;
+            h1 {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .feedback-form {
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        input,
+        textarea {
+            resize: none;
+            outline: none;
+            border: none;
+            background: rgb(238, 238, 238);
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-size: 18px;
+            transition: 0.1s all;
+            &::placeholder {
+                color: rgb(202, 202, 202);
+                transition: 0.2s all;
+            }
+            @include screen (md) {
+                margin-bottom: 15px;
+            }
+            &:focus {
+                box-shadow: 0 0px 1px black;
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+            &.danger {
+                box-shadow: 0 0px 3px red;
+                background: rgb(250, 242, 242);
+                &::placeholder {
+                    color: rgba(255, 0, 0, 0.267);
+                }
+                &:focus {
+                    box-shadow: 0 0px 1px black;
+                    background: rgb(238, 238, 238);
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+        }
+        textarea {
+            height: 250px;
+            &:active {
+                transform: scale(0.995);
+            }
+        }
+        input {
+            margin-bottom: 15px;
+            &:active {
+                transform: scale(0.99);
+            }
+        }
+        .btn {
+            border: none;
+            outline: none;
+            box-shadow: 0 1px 2px rgba(31, 31, 31, 0.5);
+            cursor: pointer;
+            &:active {
+                background: #004633;
+                box-shadow: 0;
+                transform: scale(0.98);
+            }
+        }
+        .personal-data {
+            font-size: 14px;
+            margin-left: 5px;
+            a, span {
+                cursor: pointer;
+                color: $blue-color;
+                font-weight: 600;
+                text-decoration: underline;
+            }
+        }
+        .send-button {
+            background: $blue-color;
+            @include screen (xl-down) {
+                margin-bottom: 20px;
+            }
+            &:hover {
+                background: #004181;
+            }
+            &:active {
+                background: #003a70;
+            }
+        }
+        .danger-messagse {
+            margin-top: 15px;
+            border-radius: 7px;
+            background: rgb(250, 242, 242);
+            color: rgba(255, 0, 0, 0.76);
+            box-shadow: 0 0px 2px red;
+            font-size: 15px;
+            display: inline-block;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 10px;
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+            @include screen(xl-down) {
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+        }
+        .danger-messagse.active {
+            max-height: 200px;
+            overflow: visible;
+            opacity: 1;
+            padding: 5px 10px;
+        }
+        .file-upload {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            input {
+                transition: 0.5s width padding ease-in-out;
+                width: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .hint-info {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            .context-message,
+            .upload-button::after {
+                transition: 0.2s ease-in-out all;
+            }
+            .upload-button {
+                &::after {
+                    opacity: 0;
+                    visibility: hidden;
+                    z-index: $z-message-alert;
+                    content: "";
+                    display: block;
+                    background: white;
+                    border-top: 1px solid rgb(218, 218, 218);
+                    border-left: 1px solid rgb(218, 218, 218);
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    position: absolute;
+                    right: 50%;
+                    top: 60px;
+                    margin-right: -10px;
+                    border-radius: 5px 0 0 0;
+                }
+                position: relative;
+                cursor: pointer;
+                box-shadow: 0 1.5px 3px rgba(31, 31, 31, 0.2);
+                background: $blue-color;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 15px;
+                font-size: 18px;
+                transition: 0.3s all;
+                user-select: none;
+                display: inline-block;
+                visibility: visibe;
+                opacity: 1;
+                &:hover {
+                    background: #004181;
+                }
+                &:active {
+                    background: #003a70;
+                }
+            }
+            .context-message {
+                opacity: 0;
+                visibility: hidden;
+                font-size: 18px;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                background: white;
+                border: 1px solid rgb(218, 218, 218);
+                z-index: 999;
+                padding: 20px 20px;
+                border-radius: 10px;
+                box-shadow: 0 1.5px 10px rgba(31, 31, 31, 0.1);
+                h6 {
+                    line-height: 1.2em;
+                }
+                .btn {
+                    font-size: 16px;
+                    border-radius: 7px;
+                    padding: 3px 10px;
+                    box-shadow: none;
+                }
+            }
+            &.hint-active {
+                .context-message,
+                .upload-button::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            &.paste-link-active {
+                input {
+                    width: 100%;
+                    padding: 10px 15px;
+                    transition-delay: 0.6s;
+                }
+                .upload-button {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    transition-delay: 0.2s;
+                }
+            }
+        }
+    }
+    .feedback-sended {
+        display: none;
+    }
+}
+
+.feedback-container.message {
+    .feedback-form {
+        display: none;
+    }
+    .feedback-sended {
+        display: block;
+        min-height: 300px;
+    }
+}

@@ -1,0 +1,188 @@
+.places-filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    .p-value {
+        border-radius: 15px;
+        margin: 0 8px 8px 0;
+        padding: 3px 13px;
+        background: rgba(0, 0, 0, 0.1);
+        font-size: 15px;
+        cursor: pointer;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        flex-shrink: 0;
+        user-select: none;
+        transition: 0.05s transform ease-in-out;
+        &:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+    .p-value.active {
+        background: white;
+        color: $green-color;
+        border: 1px solid white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.places-container {
+    position: relative;
+    min-height: 500px;
+    .cutblock {
+        position: absolute;
+        width: 100%;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+        padding-top: 10%;
+        top: -1px;
+        background: #0C6F55;
+        @include screen (sm) {
+            padding-top: 20%;
+        }
+    }
+}
+
+.places-container {
+    .the-category-places {
+        background: white;
+        padding: 45px 50px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+        @include screen (xl-down) {
+            padding: 30px 35px 20px 35px;
+        }
+        @include screen (sm) {
+            padding: 50px 15px 0px 15px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+    .places-heading {
+        h3 {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        h6 {
+            font-weight: 600;
+            opacity: 0.6;
+            @include screen (md) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        margin-bottom: 30px;
+        @include screen (xl-down) {
+            margin-bottom: 30px;
+        }
+        @include screen (sm) {
+            margin-bottom: 25px;
+            font-size: 24px;
+            border-bottom: 2px solid $yellow-color;
+        }
+    }
+    .the-place {
+        border: 1px solid #e8e8e8;
+        background: white;
+        border-radius: 15px;
+        display: block;
+        transition: 0.1s ease-in-out;
+        margin-bottom: 30px;
+        box-shadow: 0 0px 0px rgba(0,0,0,0);
+        cursor: pointer;
+        @include screen (sm) {
+            margin-bottom: 25px;
+        }
+        &:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+            @include screen (sm) {
+                box-shadow: none;
+                transform: none;
+            }
+        }
+        &:active {
+            box-shadow: 0 5px 30px rgba(0,0,0,0.07);
+            border-color: rgba(0, 0, 0, 0.1);
+            transform: scale(0.98);
+            @include screen (sm) {
+                box-shadow: none;
+                transform: none;
+            }
+        }
+    }
+    .the-place {
+        .place-photo {
+            background: #e8e8e8;
+            padding-top: 70%;
+            border-radius: 15px 15px 0 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .description {
+            .h-line-3 {
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+            .p-lines-16 {
+                margin-bottom: -5px;
+            }
+            padding: 25px 30px 20px 30px;
+            border-radius: 15px;
+            transition: 0.1s ease-in-out;
+            @include screen (lg) {
+                padding: 15px 17px 10px 17px;
+            }
+            h5 {
+                font-weight: 700;
+                margin-bottom: 0;
+                @include screen (lg) {
+                    font-size: 16px;
+                }
+            }
+            .adress {
+                font-size: 14px;
+                opacity: 0.5;
+                margin: 8px 0 8px 0;
+                @include screen (lg) {
+                    font-size: 12px;
+                }
+                &:before {
+                    content: "";
+                    width: 1.1em;
+                    height: 1.1em;
+                    display: inline-block;
+                    @include bg-img('/assets/icons/location.svg');
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    margin-right: 2px;
+                }
+            }
+            .category-tags {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 5px;
+                div {
+                    border-radius: 15px;
+                    margin: 0 8px 8px 0;
+                    padding: 3px 13px;
+                    background: rgba(0, 0, 0, 0.1);
+                    font-size: 15px;
+                    letter-spacing: -0.02em;
+                    @include screen (lg) {
+                        font-size: 12px;
+                    }
+                }
+                div:first-child{
+                    background: $yellow-color;
+                }
+            }
+        }
+    }
+}

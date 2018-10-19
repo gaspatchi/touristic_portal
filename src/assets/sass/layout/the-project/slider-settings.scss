@@ -1,0 +1,363 @@
+.feautures-and-silder-wrapper {
+    position: relative;
+    display: flex;
+    .slider.the-project {
+        height: 370px;
+        @include screen (xl-down) {
+            height: 450px;
+        }
+    }
+    .justify-content-flex-end {
+        justify-content: flex-end;
+    }
+    .col-feautures {
+        position: absolute;
+        left: 0;
+        @include screen (xl-down) {
+            position: relative;
+            margin-bottom: 35px;
+        }
+    }
+    .slider.the-project {
+        position: relative;
+        .slider-blur-cover {
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            &::after {
+                content: '';
+                display: block;
+                @include bg-img('/assets/icons/right-arrow-icon.svg');
+                background-size: 55%;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: absolute;
+                height: 40px;
+                width: 40px;
+                top: calc(50% - 20px);
+                right: 30px;
+                z-index: 10;
+                transition: 0.2s all ease-in-out;
+                @include screen (xl-down) {
+                    right: 70px;
+                    transform: scale(1.5);
+                }
+                @include screen (md-up) {
+                    right: 40px;
+                    transform: scale(1.5);
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                &::after {
+                    transform: scale(1.3);
+                }
+            }
+            .blur-img {
+                width: 100%;
+                position: absolute;
+                height: 100%;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                filter: blur(5px) brightness(0.7);
+                transform: scale(1.1);
+                transition: 0.4s all ease-in-out;
+            }
+            width: 90%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+        .geo-slider {
+            width: 80%;
+            position: absolute;
+            top: 35px;
+            left: 15px;
+            border-radius: 15px;
+            background: rgb(10, 10, 10);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .swiper-slide {
+            height: 300px;
+            @include screen (xl-down) {
+                height: 380px;
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .exit-button {
+            position: absolute;
+            top: 33px !important;
+            left: auto;
+            right: 7px;
+            z-index: 100;
+            @include bg-img('/assets/icons/close-button.svg');
+            background-size: 60%;
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .swiper-button-disabled {
+            display: none;
+        }
+    }
+    .geo-slider.desktop {
+        @include screen (md) {
+            display: none;
+        }
+    }
+    .geo-slider.mobile {
+        @include screen (md-up-to-infitiy) {
+            display: none;
+        }
+    }
+}
+
+$slider-transition: 0.5s;
+.feautures-and-silder-wrapper {
+    .swiper-container {
+        width: 100%;
+        border-radius: 15px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0 all;
+        transition-delay: 0;
+    }
+    .swiper-button-next,
+    .swiper-button-prev,
+    .exit-button {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0 all;
+        transition-delay: 0;
+        color: white;
+        margin-top: -17px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        @include bg-img('/assets/icons/swipr-arrow.svg');
+        width: 35px;
+        height: 35px;
+        background-size: 100%;
+    }
+    .swiper-button-next {
+        transform: rotate(180deg);
+    }
+    .col-feautures,
+    .slider-blur-cover {
+        opacity: 1;
+        will-change: opacity;
+        transition: $slider-transition opacity;
+    }
+    .col-sider {
+        will-change: all;
+    }
+    .the-project.slider {
+        will-change: width, height;
+        .geo-slider {
+            will-change: width, top, left;
+        }
+        .swiper-slide {
+            will-change: height;
+            width: 100% !important;
+        }
+        .swiper-slide-active {
+            display: block !important;
+        }
+    }
+}
+
+.feautures-and-silder-wrapper {
+    .col-sider,
+    .col-feautures,
+    .the-project.slider,
+    .the-project.slider .geo-slider,
+    .the-project.slider .swiper-slide {
+        transition: $slider-transition all;
+    }
+}
+
+.feautures-and-silder-wrapper {
+    //4
+    .col-sider {
+        transition-delay: 0s;
+    }
+    .the-project.slider {
+        .geo-slider {
+            transition-delay: 0s;
+        }
+    }
+    .slider.the-project {
+        .swiper-slide {
+            transition-delay: 0s;
+        }
+    } //3
+    .the-project.slider {
+        transition-delay: 0.8s;
+    } //2
+    .slider-blur-cover {
+        transition-delay: 1.8s;
+    } //1
+    .col-feautures {
+        transition-delay: 1.3s;
+    }
+}
+
+.feautures-and-silder-wrapper.slider-active {
+    //1
+    .col-feautures {
+        opacity: 0;
+        transition-delay: 0s;
+        @include screen (xl-down) {
+            opacity: 1;
+        }
+    } //2
+    .slider-blur-cover {
+        opacity: 0;
+        transition-delay: 0.3s;
+    } //3
+    .the-project.slider {
+        width: 100%;
+        height: 470px;
+        transition-delay: 0.8s;
+    } //4
+    .col-sider {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        transition-delay: 1.3s;
+    }
+    .the-project.slider {
+        .geo-slider {
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition-delay: 1.3s;
+        }
+    }
+    .slider.the-project {
+        .swiper-slide {
+            height: 470px;
+            transition-delay: 1.3s;
+        }
+    }
+    .swiper-container {
+        opacity: 1;
+        transition-delay: 1.3s;
+        visibility: visible;
+    }
+    .geo-slider {
+        transition-delay: 1.3s;
+        background: rgb(66, 66, 66);
+        background-image: 0 !important;
+    }
+    .swiper-button-next,
+    .swiper-button-prev,
+    .exit-button {
+        opacity: 0.8;
+        transition-delay: 2.5s;
+        visibility: visible;
+    }
+}
+
+.feautures-and-silder-wrapper {
+    @include screen(xl-down){
+        .feauture-block{
+        height: auto;
+        }
+    }
+    @include screen(md) {
+        .geo-slider {
+            background: rgb(156, 156, 156);
+            background-image: none !important;
+        }
+        .col-feautures {
+            opacity: 0;
+            transition-delay: 0s;
+            @include screen (xl-down) {
+                opacity: 1;
+            }
+        } //2
+        .slider-blur-cover {
+            opacity: 0;
+            transition-delay: 0.3s;
+        } //3
+        .the-project.slider {
+            width: 100%;
+            height: auto;
+            padding-top: 60%;
+            @include screen (sm) {
+                padding-top: 75%;
+                height: auto !important;
+            }
+            transition-delay: 0.8s;
+        } //4
+        .col-sider {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+            transition-delay: 1.3s;
+        }
+        .the-project.slider {
+            .geo-slider {
+                top: 0;
+                left: 0;
+                width: 100%;
+                transition-delay: 1.3s;
+            }
+        }
+        .slider.the-project {
+            .swiper-slide {
+                padding-top: 0%;
+                transition-delay: 1.3s;
+                @include screen (md) {
+                    padding-top: 60%;
+                    height: auto !important;
+                }
+                @include screen (sm) {
+                    padding-top: 75%;
+                    height: auto !important;
+                }
+            }
+        }
+        .swiper-container {
+            opacity: 1;
+            transition-delay: 1.3s;
+            visibility: visible;
+        }
+        .swiper-button-next,
+        .swiper-button-prev,
+        .exit-button {
+            opacity: 0.8;
+            transition-delay: 2.5s;
+            visibility: visible;
+        }
+    }
+    @include screen(sm) {
+        .geo-slider,
+        .swiper-slide,
+        .swiper-container,
+        .swiper-wrapper {
+            border-radius: 0 !important;
+        }
+        .geo-slider {
+            margin-left: -15px;
+            width: calc(100% + 30px) !important;
+        }
+        padding-bottom: 20px;
+        .exit-button {
+            display: none;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            @include bg-img('/assets/icons/swipr-arrow.svg');
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+        }
+    }
+}

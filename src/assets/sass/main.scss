@@ -1,0 +1,89 @@
+//base
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'base/grid';
+@import 'base/typography';
+
+//components
+@import 'components/dev-menu';
+@import 'components/components';
+@import 'components/header';
+@import 'components/heading-page';
+@import 'components/news-preview-block';
+@import 'components/footer';
+@import 'components/wp-content-container';
+@import 'components/comments';
+@import 'components/content-placeholder';
+@import 'components/primary-menu';
+@import 'components/vim';
+
+//home-page
+@import 'layout/home-page/main-swiper';
+@import 'layout/home-page/sections/facts';
+@import 'layout/home-page/sections/news-home';
+@import 'layout/home-page/sections/social-activity';
+
+//news-page
+@import 'layout/all-news/news-feed.scss';
+
+//places-page
+@import 'layout/places/places-section.scss';
+
+//all-projects
+@import 'layout/all-projects/all-projects.scss';
+
+//post-page
+@import 'layout/the-news-post/the-news-post-section.scss';
+
+//the-project
+@import 'layout/the-project/the-project-section.scss';
+@import 'layout/the-project/slider-settings.scss';
+
+//the-project
+@import 'layout/about-city-post/about-city-post.scss';
+
+
+//feedback
+@import 'layout/feedback-page/feedback-section.scss';
+
+//the-place
+@import 'layout/the-place/the-place-section';
+
+//forum
+@import 'layout/forum/forum';
+
+//404
+
+@import 'layout/404/404.scss';
+
+html, body{
+    min-height: 100vh;
+    background: #eaeaea;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.icon{
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.bg-red{background: rgba(255, 0, 0, 0.808);}
+.bg-green{background: rgba(0, 128, 0, 0.815);}
+.bg-yellow{background: rgba(255, 255, 0, 0.801);}
+.bg-grey{background: rgba(128, 128, 128, 0.753)}
+
+.sm-padding-none{
+    @include screen (sm){
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.d-none{
+    display: none;
+}

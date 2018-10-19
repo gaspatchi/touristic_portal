@@ -1,0 +1,249 @@
+.forum {
+    position: relative;
+    .cutblock {
+        position: absolute;
+        width: 100%;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+        padding-top: 10%;
+        top: -1px;
+        background: #014b96;
+        @include screen (sm) {
+            padding-top: 20%;
+        }
+    }
+}
+
+.forum-content-section {
+    overflow: hidden;
+    background: #f1f1f1;
+    min-height: 500px;
+    border-radius: 10px;
+    letter-spacing: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    @include screen (sm) {
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.forum-content-section {
+    padding-right: 0;
+    padding-left: 0;
+    .row-out {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.forum-content-section {
+    
+    .comments .the-comment .the-comment-content .answers .answer-button {
+        color: $blue-color;
+    }
+    .answers-feed .the-comment-content{
+        width: 100%;
+    }
+    .comments .write-comment .btn,
+    .comment-sended .btn {
+        background: $blue-color;
+        border: none;
+        outline: none;
+        box-shadow: 0 1px 2px rgba(31, 31, 31, 0.5);
+        &:active {
+            background: #003c77;
+            transform: scale(0.99);
+        }
+    }
+    .list-heading {
+        padding: 15px 20px;
+        font-size: 14px;
+        user-select: none;
+        background: white;
+        font-weight: 600;
+        @include screen(xl) {
+            display: none;
+        }
+        @include screen(xl-down) {
+            padding: 15px 30px 0 30px;
+        }
+        @include screen(sm) {
+            padding: 20px 15px 0 15px;
+        }
+    }
+    .discussion-topic-list {
+        height: inherit;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.5s max-height ease-in-out;
+        overflow: hidden;
+        @include screen(xl-down) {
+            min-height: auto;
+            max-height: 55px;
+            margin-bottom: 0px;
+            &.xl-down-active {
+                max-height: 1000px;
+                .item.active {
+                    @include screen(xl-down) {
+                        &:after {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+        .item {
+            flex-shrink: 0;
+            padding: 15px 20px;
+            font-size: 18px;
+            user-select: none;
+            font-weight: 600;
+            color: rgb(49, 49, 49);
+            border-bottom: 1px solid rgb(230, 230, 230);
+            @include screen(xl-down) {
+                padding: 15px 30px;
+                font-weight: 400;
+            }
+            @include screen(sm) {
+                padding: 15px 15px;
+            }
+            cursor: pointer;
+            margin-top: -1px;
+            @include screen(xl-down) {
+                order: 2;
+            }
+            &.active {
+                background: white !important;
+                font-weight: 800;
+                color: $blue-color;
+                box-shadow: 0 1px 15px rgba(0, 0, 0, 0.03);
+                border: none;
+                @include screen(xl-down) {
+                    order: 0;
+                    font-weight: 400;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 5px 30px 15px 30px;
+                    &:after {
+                        content: "";
+                        transition: 0.2s all;
+                        background-position: center -1px;
+                        background-size: 120%;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        float: right;
+                        @include bg-img('/assets/icons/comment-arrow.svg');
+                        height: 25px;
+                        width: 25px;
+                    }
+                }
+                @include screen(sm) {
+                    padding: 5px 15px 15px 15px;
+                    font-weight: 400;
+                }
+            }
+            &:hover {
+                background: rgb(250, 250, 250);
+                color: $blue-color;
+                border-color: transparent;
+            }
+        }
+    }
+    .commnents-heading {
+        h2 {
+            font-size: 24px;
+            margin-bottom: 0px;
+            @include screen (lg) {
+                font-size: 20px;
+            }
+        }
+    }
+    .write-comment {
+        padding-bottom: 0;
+    }
+    .comments-feed {
+        padding-top: 5px;
+    }
+    .the-discussion {
+        display: none;
+        background: white;
+        position: relative;
+        transition: 0.2s ease-in-out;
+        padding: 40px 60px;
+        @include screen(xl-down) {
+            padding: 40px 30px;
+        }
+        @include screen(sm) {
+            padding: 30px 15px;
+        }
+        min-height: 500px;
+        .wp-content {
+            border-bottom: 3px solid #f0f0f0;
+        }
+        h1 {
+            font-weight: 800;
+            margin-bottom: 20px;
+            @include screen (lg) {
+                font-size: 26px;
+                margin-bottom: 10px;
+            }
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.paste-video-popup {
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s opacity;
+    position: fixed;
+    z-index: $z-popup;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 75, 122, 0.425);
+    top: 0;
+    right: 0;
+    h4 {
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    p {
+        font-size: 14px;
+    }
+    .video-link-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+    }
+    .video-link-container {
+        min-width: 300px;
+        background: white;
+        padding: 30px 25px;
+        @include screen(sm) {
+            padding: 30px 15px;
+        }
+        border-radius: 15px;
+    }
+    .btn.grey {
+        background: rgb(196, 196, 196) !important;
+        &:active {
+            background: rgb(172, 172, 172) !important;
+        }
+    }
+}
